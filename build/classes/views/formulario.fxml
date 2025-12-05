@@ -43,7 +43,7 @@
             <CheckBox fx:id="chkReceta" mnemonicParsing="false" text="Receta Necesaria" GridPane.rowIndex="4" />
             <ComboBox fx:id="cmbObjetivo" prefWidth="150.0" promptText="Seleccione objetivo" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <Label text="Objetivo:" GridPane.rowIndex="5" />
-            <ComboBox fx:id="cmbTipo" prefWidth="150.0" GridPane.columnIndex="1" />
+            <ComboBox fx:id="cmbTipo" onAction="#selected" prefWidth="150.0" GridPane.columnIndex="1" />
          </children>
       </GridPane>
       <Button fx:id="btnGuardar" layoutX="45.0" layoutY="461.0" mnemonicParsing="false" onAction="#guardar" prefHeight="27.0" prefWidth="74.0" text="Guardar" />

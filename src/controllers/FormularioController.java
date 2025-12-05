@@ -141,6 +141,18 @@ public class FormularioController implements Initializable {
         }
         
     }
+    
+    @FXML
+    private void selected(ActionEvent event){
+        if(this.cmbTipo.getValue().equals("MEDICAMENTO")){
+           this.cmbObjetivo.setDisable(true);
+           this.chkReceta.setDisable(false);
+        }else{
+            this.chkReceta.setDisable(true);
+            this.cmbObjetivo.setDisable(false);
+        }
+        
+    }
 
     @FXML
     private void cancelar(ActionEvent event) {
