@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="523.0" prefWidth="319.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FormularioController">
+   <children>
+      <Label layoutX="59.0" layoutY="14.0" text="Producto Farmaceutico">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="14.0" layoutY="86.0" prefHeight="335.0" prefWidth="286.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.6" minWidth="10.0" prefWidth="124.59998779296876" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.60003662109375" minWidth="10.0" prefWidth="146.20001220703125" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Tipo:" />
+            <Label text="Nombre:" GridPane.rowIndex="1" />
+            <Label text="Dosis:" GridPane.rowIndex="2" />
+            <Label text="Fecha de Vencimiento: " GridPane.rowIndex="3" />
+            <TextField fx:id="txtNombre" promptText="Ingrese nombre..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtDosis" promptText="Ingrese Dosis..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <DatePicker fx:id="dtpFechaVencimiento" promptText="Ingrese Vencimiento" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <CheckBox fx:id="chkReceta" mnemonicParsing="false" text="Receta Necesaria" GridPane.rowIndex="4" />
+            <ComboBox fx:id="cmbObjetivo" prefWidth="150.0" promptText="Seleccione objetivo" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Objetivo:" GridPane.rowIndex="5" />
+            <ComboBox fx:id="cmbTipo" prefWidth="150.0" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+      <Button fx:id="btnGuardar" layoutX="45.0" layoutY="461.0" mnemonicParsing="false" onAction="#guardar" prefHeight="27.0" prefWidth="74.0" text="Guardar" />
+      <Button fx:id="btnCancelar" layoutX="204.0" layoutY="461.0" mnemonicParsing="false" onAction="#cancelar" prefHeight="27.0" prefWidth="74.0" text="Cancelar" />
+   </children>
+</AnchorPane>
