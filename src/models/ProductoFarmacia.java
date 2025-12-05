@@ -3,7 +3,7 @@ package models;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import models.DatoInvalidoException;
+import java.time.chrono.ChronoLocalDate;
 
 
 public class ProductoFarmacia implements Serializable{
@@ -12,7 +12,8 @@ public class ProductoFarmacia implements Serializable{
     protected LocalDate fechaDeVencimiento;
 
     public ProductoFarmacia(String nombre, int dosis, LocalDate fecha) {
-        if(fecha.isAfter(LocalDate.now()) || nombre != null || dosis > 0){
+        
+        if(!fecha.isBefore(LocalDate.now()) && nombre != null && dosis > 0){
             this.nombre = nombre;
             this.dosis = dosis;
             this.fechaDeVencimiento = fecha;
@@ -55,7 +56,9 @@ public class ProductoFarmacia implements Serializable{
 
     public void setFechaDeVencimiento(LocalDate fechaDeVencimiento) {
         
-        if(!fechaDeVencimiento.isAfter(LocalDate.now())){
+       
+        
+        if(!fechaDeVencimiento.isBefore(LocalDate.now())){
             this.fechaDeVencimiento = fechaDeVencimiento;
         }else{
             throw new DatoInvalidoException();
